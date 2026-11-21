@@ -1,0 +1,23 @@
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin container {
+  width: min(100% - 40px, 1200px);
+  margin-inline: auto;
+}
+
+@mixin section-spacing {
+  padding: 100px 0;
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+

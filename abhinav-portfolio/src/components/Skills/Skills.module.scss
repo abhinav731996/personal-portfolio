@@ -1,0 +1,135 @@
+
+@use "../../styles/variables" as *;
+
+.skills {
+  padding: 110px 0;
+  background: $background;
+}
+
+.container {
+  width: min(100% - 40px, 1200px);
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 60px;
+
+  h2 {
+    span {
+      color: $primary;
+    }
+  }
+
+  p {
+    margin-top: 15px;
+  }
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.categoryCard {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 14px;
+  padding: 28px;
+  transition: $transition;
+
+  &:hover {
+    border-color: rgba(181, 243, 109, 0.5);
+    transform: translateY(-5px);
+  }
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-bottom: 25px;
+
+  h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.categoryIcon {
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(181, 243, 109, 0.1);
+  color: $primary;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.technologyList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  background: $surface-light;
+  border: 1px solid $border;
+  border-radius: 8px;
+  color: $text-secondary;
+  font-size: 13px;
+  transition: $transition;
+
+  svg {
+    font-size: 18px;
+    color: $primary;
+  }
+
+  &:hover {
+    color: $text-primary;
+    border-color: $primary;
+    background: rgba(181, 243, 109, 0.06);
+  }
+}
+
+.bottomText {
+  text-align: center;
+  color: $text-muted;
+  font-size: 13px;
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .skills {
+    padding: 80px 0;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryCard {
+    padding: 22px;
+  }
+
+  .categoryHeader h3 {
+    font-size: 17px;
+  }
+}
+

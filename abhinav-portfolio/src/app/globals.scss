@@ -1,0 +1,64 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: $background;
+  color: $text-primary;
+  font-family: $font-main;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: $primary;
+  color: $background;
+}
+
+.container-custom {
+  @include container;
+}
+
+.section-label {
+  color: $primary;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 15px;
+}
+
+.section-description {
+  color: $text-secondary;
+  line-height: 1.8;
+  font-size: 16px;
+}

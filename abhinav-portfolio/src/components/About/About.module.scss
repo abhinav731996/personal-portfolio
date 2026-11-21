@@ -1,0 +1,331 @@
+
+@use "../../styles/variables" as *;
+
+.about {
+  padding: 110px 0;
+  background: #0e1116;
+  overflow: hidden;
+}
+
+.container {
+  width: min(100% - 40px, 1200px);
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 70px;
+
+  h2 {
+    span {
+      color: $primary;
+    }
+  }
+
+  p {
+    margin-top: 15px;
+  }
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 85px;
+}
+
+/* Profile Image */
+
+.imageWrapper {
+  position: relative;
+  max-width: 410px;
+  width: 100%;
+  margin: auto;
+}
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: $surface-light;
+  border: 1px solid $border;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.profileImage {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+
+.imageDecoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $primary;
+  border-radius: 18px;
+  top: 18px;
+  left: 18px;
+  z-index: -1;
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 25px;
+  left: -20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 10px;
+  color: $text-primary;
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $primary;
+  }
+}
+
+/* About Content */
+
+.aboutContent {
+  h3 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 22px;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  > p {
+    color: $text-secondary;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+}
+
+/* Expertise Cards */
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.expertiseCard {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 17px;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 10px;
+  transition: $transition;
+
+  &:hover {
+    border-color: $primary;
+    transform: translateX(5px);
+  }
+
+  h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: $text-primary;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+.expertiseIcon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(181, 243, 109, 0.1);
+  border-radius: 10px;
+  color: $primary;
+  font-size: 20px;
+}
+
+/* Resume */
+
+.resumeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: $primary;
+  color: #10130d;
+  padding: 15px 23px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: $transition;
+
+  &:hover {
+    background: $primary-hover;
+    color: #10130d;
+    transform: translateY(-3px);
+  }
+}
+
+/* Experience */
+
+.experience {
+  margin-top: 120px;
+}
+
+.experienceHeading {
+  margin-bottom: 35px;
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+}
+
+.experienceCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 35px;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 14px;
+  transition: $transition;
+
+  &:hover {
+    border-color: rgba(181, 243, 109, 0.5);
+  }
+}
+
+.companyIcon {
+  min-width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(181, 243, 109, 0.1);
+  color: $primary;
+  font-size: 24px;
+  border-radius: 12px;
+}
+
+.experienceDetails {
+  h4 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+}
+
+.company {
+  color: $primary;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.location {
+  color: $text-muted;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.experienceDescription {
+  color: $text-secondary;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0;
+}
+
+.currentBadge {
+  margin-left: auto;
+  background: rgba(181, 243, 109, 0.1);
+  color: $primary;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .imageWrapper {
+    max-width: 350px;
+  }
+
+  .aboutContent {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .heading {
+    margin-bottom: 50px;
+  }
+
+  .imageWrapper {
+    max-width: 290px;
+  }
+
+  .imageBadge {
+    left: -8px;
+    bottom: 15px;
+  }
+
+  .experience {
+    margin-top: 80px;
+  }
+
+  .experienceCard {
+    padding: 22px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .experienceDetails {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .currentBadge {
+    margin-left: 70px;
+  }
+}
